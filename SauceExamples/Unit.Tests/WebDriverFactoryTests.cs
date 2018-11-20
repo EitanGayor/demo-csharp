@@ -13,18 +13,22 @@ namespace Unit.Tests
         private string _testBrowserVersion = "latest";
         private string _testOS = "Windows 10";
         private string _testBuildName = "testBuildName";
+        private DriverFactory _factory;
 
+        [TestInitialize]
+        public void Setup()
+        {
+            _factory = new DriverFactory();
+        }
         [TestMethod]
         public void ShouldNotBeNull()
         {
-            var factory = new DriverFactory();
-            factory.Should().NotBeNull("Should have been initialized");
+            _factory.Should().NotBeNull("Should have been initialized");
         }
         [TestMethod]
         public void ShouldReturnDriver()
         {
-            var factory = new DriverFactory();
-            var driver = factory.CreateRemoteDriver(_testBrowser, _testBrowserVersion, _testOS);
+            var driver = _factory.CreateRemoteDriver(_testBrowser, _testBrowserVersion, _testOS);
             driver.Should().NotBeNull("The factory should instantiate a remote browser");
         }
         //[TestMethod]

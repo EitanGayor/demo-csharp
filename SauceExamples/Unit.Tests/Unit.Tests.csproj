@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="DriverFactory.cs" />
     <Compile Include="IDriver.cs" />
+    <Compile Include="RemoteDriver.cs" />
     <Compile Include="WebDriverFactoryTests.cs" />
     <Compile Include="SauceLabsCapabilitiesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
