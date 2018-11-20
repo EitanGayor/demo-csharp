@@ -31,6 +31,18 @@ namespace Unit.Tests
             var driver = _factory.CreateRemoteDriver(_testBrowser, _testBrowserVersion, _testOS);
             driver.Should().NotBeNull("The factory should instantiate a remote browser");
         }
+        [TestMethod]
+        public void ShouldReturnIDriver()
+        {
+            var driver = _factory.Create(_testBrowser, _testBrowserVersion, _testOS);
+            driver.Should().BeOfType(typeof(RemoteDriver));
+        }
+        [TestMethod]
+        public void ShouldReturnDriverWithSauceCapsPassedIn()
+        {
+            var driver = _factory.Create(_testBrowser, _testBrowserVersion, _testOS);
+            driver.Should().BeOfType(typeof(RemoteDriver));
+        }
         //[TestMethod]
         //public void ShouldReturnRemoteWebDriver()
         //{

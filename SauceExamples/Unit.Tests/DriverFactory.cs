@@ -6,5 +6,10 @@
         {
             return new RemoteDriver(testBrowser, testBrowserVersion, testOs);
         }
+
+        public IDriver Create(string testBrowser, string testBrowserVersion, string testOs)
+        {
+            return new RemoteDriver(testBrowser, testBrowserVersion, testOs);
+        }
     }
 }
