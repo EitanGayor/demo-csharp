@@ -15,50 +15,63 @@ namespace Unit.Tests
         private string _testBuildName = "testBuildName";
 
         [TestMethod]
-        public void ShouldReturnRemoteWebDriver()
+        public void ShouldNotBeNull()
         {
-            var factory = new WebDriverFactory();
-            var sauceCapabilities = new SauceLabsCapabilities();
-            var driver = GetSauceDriver(factory, sauceCapabilities);
-            driver.Should().NotBeNull();
-        }
-
-        private RemoteWebDriver GetSauceDriver(WebDriverFactory factory, SauceLabsCapabilities sauceCapabilities)
-        {
-            return factory.CreateSauceDriver(_testBrowser, _testBrowserVersion, _testOS, sauceCapabilities);
-        }
-
-        [TestMethod]
-        public void ShouldReturnRemoteWebDriverWithBuildName()
-        {
-            var factory = new WebDriverFactory();
-            var sauceCapabilities = new SauceLabsCapabilities();
-            SauceLabsCapabilities.BuildName = _testBuildName;
-            var driver = GetSauceDriver(factory, sauceCapabilities);
-            driver.Capabilities.HasCapability("build").Should().BeTrue();
-            driver.Capabilities.GetCapability("build").Should().BeEquivalentTo(_testBuildName);
+            var factory = new DriverFactory();
+            factory.Should().NotBeNull("Should have been initialized");
         }
         [TestMethod]
-        public void ShouldBeInitialized()
+        public void ShouldReturnDriver()
         {
-            var sauceCapabilities = new SauceLabsCapabilities();
-            var factory = new WebDriverFactory(sauceCapabilities);
-            var driver = GetSauceDriver(factory, sauceCapabilities);
-            driver.Should().NotBeNull("the driver should be initialized");
+            var factory = new DriverFactory();
+            var driver = factory.CreateRemoteDriver(_testBrowser, _testBrowserVersion, _testOS);
+            driver.Should().NotBeNull("The factory should instantiate a remote browser");
         }
-        [TestMethod]
-        public void ShouldReturnRemoteWebDriverWithBrowserOsAndVersion()
-        {
+        //[TestMethod]
+        //public void ShouldReturnRemoteWebDriver()
+        //{
+        //    var factory = new WebDriverFactory();
+        //    var sauceCapabilities = new SauceLabsCapabilities();
+        //    var driver = GetSauceDriver(factory, sauceCapabilities);
+        //    driver.Should().NotBeNull();
+        //}
 
-            var factory = new WebDriverFactory();
-            var sauceCapabilities = new SauceLabsCapabilities();
-            var driver = GetSauceDriver(factory, sauceCapabilities);
-            driver.Capabilities.GetCapability(CapabilityType.BrowserName).
-                Should().BeEquivalentTo(_testBrowser);
-            driver.Capabilities.GetCapability(CapabilityType.BrowserVersion).
-                Should().BeEquivalentTo(_testBrowserVersion);
-            driver.Capabilities.GetCapability(CapabilityType.Platform).
-                Should().BeEquivalentTo(_testOS);
-        }
+        //private RemoteWebDriver GetSauceDriver(WebDriverFactory factory, SauceLabsCapabilities sauceCapabilities)
+        //{
+        //    return factory.CreateSauceDriver(_testBrowser, _testBrowserVersion, _testOS, sauceCapabilities);
+        //}
+
+        //[TestMethod]
+        //public void ShouldReturnRemoteWebDriverWithBuildName()
+        //{
+        //    var factory = new WebDriverFactory();
+        //    var sauceCapabilities = new SauceLabsCapabilities();
+        //    SauceLabsCapabilities.BuildName = _testBuildName;
+        //    var driver = GetSauceDriver(factory, sauceCapabilities);
+        //    driver.Capabilities.HasCapability("build").Should().BeTrue();
+        //    driver.Capabilities.GetCapability("build").Should().BeEquivalentTo(_testBuildName);
+        //}
+        //[TestMethod]
+        //public void ShouldBeInitialized()
+        //{
+        //    var sauceCapabilities = new SauceLabsCapabilities();
+        //    var factory = new WebDriverFactory(sauceCapabilities);
+        //    var driver = GetSauceDriver(factory, sauceCapabilities);
+        //    driver.Should().NotBeNull("the driver should be initialized");
+        //}
+        //[TestMethod]
+        //public void ShouldReturnRemoteWebDriverWithBrowserOsAndVersion()
+        //{
+
+        //    var factory = new WebDriverFactory();
+        //    var sauceCapabilities = new SauceLabsCapabilities();
+        //    var driver = GetSauceDriver(factory, sauceCapabilities);
+        //    driver.Capabilities.GetCapability(CapabilityType.BrowserName).
+        //        Should().BeEquivalentTo(_testBrowser);
+        //    driver.Capabilities.GetCapability(CapabilityType.BrowserVersion).
+        //        Should().BeEquivalentTo(_testBrowserVersion);
+        //    driver.Capabilities.GetCapability(CapabilityType.Platform).
+        //        Should().BeEquivalentTo(_testOS);
+        //}
     }
 }
