@@ -1,7 +1,5 @@
-﻿using Common;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium.Remote;
 
 namespace Unit.Tests
 {
@@ -24,6 +22,14 @@ namespace Unit.Tests
         public void ShouldNotBeNull()
         {
             _factory.Should().NotBeNull("Should have been initialized");
+        }
+
+        [TestMethod]
+        public void ShouldReturnDefaultConfiguration()
+        {
+            var driver = _factory.CreateRemoteDriver(RemoteType.SauceLabs);
+            driver.
+
         }
         [TestMethod]
         public void ShouldReturnDriver()
@@ -89,5 +95,10 @@ namespace Unit.Tests
         //    driver.Capabilities.GetCapability(CapabilityType.Platform).
         //        Should().BeEquivalentTo(_testOS);
         //}
+    }
+
+    internal enum RemoteType
+    {
+        SauceLabs
     }
 }
