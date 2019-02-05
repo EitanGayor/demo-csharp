@@ -100,7 +100,7 @@
     <Compile Include="LoggingWithSauce.cs" />
     <Compile Include="ParallelTestsAtClassLevel.cs" />
     <Compile Include="ReusableTests.cs" />
-    <Compile Include="SimpleExamples\Selenium4.cs" />
+    <Compile Include="W3C\SeleniumW3CNunit.cs" />
     <Compile Include="SpecFlow\Steps\BlogPageSteps.cs" />
     <Compile Include="SpecFlow\Features\BlogPage.feature.cs">
       <AutoGen>True</AutoGen>
