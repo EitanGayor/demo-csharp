@@ -13,7 +13,7 @@ namespace SeleniumNunit.W3C
     [Category("Selenium 4 tests")]
     public class SeleniumW3CNunit
     {
-        IWebDriver _driver;
+        private IWebDriver _driver;
         [Test]
         public void W3CEdge()
         {
@@ -26,8 +26,7 @@ namespace SeleniumNunit.W3C
             var options = new EdgeOptions()
             {
                 BrowserVersion = "latest",
-                PlatformName = "Windows 10"
-                
+                PlatformName = "Windows 10"               
             };
 
             var sauceOptions = new Dictionary<string, object>
