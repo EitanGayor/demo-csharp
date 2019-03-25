@@ -9,18 +9,10 @@ namespace Web.Tests.Pages
         {
         }
 
-        public CartElement Cart => new CartElement(_driver);
-
         internal CheckoutInformationPage Checkout()
         {
             Wait.UntilIsVisibleByCss("a[class='btn_action checkout_button']").Click();
             return new CheckoutInformationPage(_driver);
-        }
-
-        internal YourShoppingCartPage Open()
-        {
-            _driver.Navigate().GoToUrl($"{BaseUrl}/cart.html");
-            return this;
         }
     }
 }
