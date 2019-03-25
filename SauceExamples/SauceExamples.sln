@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Posh", "Posh", "{B4AB832A-6
 		..\Test-SauceConnectState.Tests.ps1 = ..\Test-SauceConnectState.Tests.ps1
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pages", "Pages\Pages.csproj", "{3ECB4862-6933-4017-AEB4-037F96EE4507}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{8EAC3C5C-FDF4-4A85-BFE9-19EB8B30E989}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EAC3C5C-FDF4-4A85-BFE9-19EB8B30E989}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EAC3C5C-FDF4-4A85-BFE9-19EB8B30E989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ECB4862-6933-4017-AEB4-037F96EE4507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ECB4862-6933-4017-AEB4-037F96EE4507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ECB4862-6933-4017-AEB4-037F96EE4507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ECB4862-6933-4017-AEB4-037F96EE4507}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7B1C4CE7-45E7-436A-96D2-79493B1274ED} = {E1AE3262-10C1-4643-A426-F963ECF8AC79}
 		{B4AB832A-65EC-44FF-B136-197A2DA8E74B} = {02D1155D-7E24-485D-84E5-043B79A04B74}
+		{3ECB4862-6933-4017-AEB4-037F96EE4507} = {E1AE3262-10C1-4643-A426-F963ECF8AC79}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6019E59C-E9C4-4734-90C4-B49A0CCF0A59}
